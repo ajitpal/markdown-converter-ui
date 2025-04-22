@@ -1,6 +1,6 @@
 # About Me - Markdown Converter UI
 
-I've developed a streamlined web interface that transforms virtually any document into clean, LLM-ready Markdown using Microsoft's MarkItDown MCP. This tool serves as an AI data engineer in your workflow, converting PDFs, PowerPoint presentations, Word documents, audio files, and even images into consistent Markdown format.
+I've developed a streamlined web interface that transforms virtually any document into clean, LLM-ready Markdown using Microsoft's MarkItDown. This tool serves as an AI data engineer in your workflow, converting PDFs, PowerPoint presentations, Word documents, audio files, and even images into consistent Markdown format.
 
 ## Key Features
 - **Universal Format Support**: Handles multiple document types with a simple drag-and-drop interface
