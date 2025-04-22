@@ -101,6 +101,21 @@ Run the app locally as described in the Usage section above.
    - Main file path: `app.py`
    - Python version: 3.8 or higher
    - Requirements: `requirements.txt`
+   - Advanced settings > Packages: `packages.txt`
+
+**Important Note for Streamlit Cloud:**
+
+If you encounter PDF conversion errors like `MissingDependencyException`, ensure that:
+
+1. Your `requirements.txt` includes `markitdown[all]>=0.1.0` (not just `markitdown>=0.1.0`)
+2. You have a `packages.txt` file with the necessary system dependencies:
+   ```
+   poppler-utils
+   tesseract-ocr
+   libreoffice
+   ffmpeg
+   ```
+3. If issues persist, you may need to use the Streamlit secrets management to set environment variables for the PDF processing libraries.
 
 ### Docker Deployment
 
@@ -111,8 +126,19 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Install system dependencies for PDF processing
+RUN apt-get update && apt-get install -y \
+    poppler-utils \
+    tesseract-ocr \
+    libreoffice \
+    ffmpeg \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+
+# Explicitly install MarkItDown with all dependencies
 RUN pip install "markitdown[all]"
 
 COPY . .
@@ -222,7 +248,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
    - Check file size limits (default is 50MB)
    - Ensure you have write permissions in the temporary directory
 
-3. **UI Issues**
+3. **PDF Conversion Issues**
+   - If you see `MissingDependencyException` errors, ensure you've installed MarkItDown with PDF support:
+     ```bash
+     pip install "markitdown[all]"
+     # or specifically for PDF
+     pip install "markitdown[pdf]"
+     ```
+   - Make sure you have the necessary system dependencies installed:
+     - On Ubuntu/Debian: `sudo apt-get install poppler-utils tesseract-ocr libreoffice ffmpeg`
+     - On macOS with Homebrew: `brew install poppler tesseract libreoffice ffmpeg`
+     - On Windows: Install the appropriate binaries and ensure they're in your PATH
+   - For Streamlit Cloud deployment, ensure your `packages.txt` file includes these dependencies
+   - Check that your PDF files are not corrupted or password-protected
+
+4. **UI Issues**
    - Clear your browser cache if the UI is not loading properly
    - Ensure you're using a modern browser (Chrome, Firefox, or Edge recommended)
    - Check the browser console for any JavaScript errors

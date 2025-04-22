@@ -1,5 +1,5 @@
 streamlit>=1.32.0
-markitdown>=0.1.0
+markitdown[all]>=0.1.0
 python-dotenv>=1.0.0
 Pillow>=10.0.0
 requests>=2.31.0
