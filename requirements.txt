@@ -1,0 +1,11 @@
+streamlit>=1.32.0
+markitdown>=0.1.0
+python-dotenv>=1.0.0
+Pillow>=10.0.0
+requests>=2.31.0
+PyYAML>=6.0
+markdown>=3.5
+pytest>=7.4.0
+black>=23.9.1
+flake8>=6.1.0
+
