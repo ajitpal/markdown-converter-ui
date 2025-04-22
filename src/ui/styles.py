@@ -47,11 +47,27 @@ def apply_styles():
             border-bottom: 1px solid #eaeaea;
             width: 100%;
         }
+        .app-summary {
+            text-align: center;
+            color: #333;
+            max-width: 800px;
+            margin: 15px auto 5px auto;
+            line-height: 1.5;
+            font-size: 1.2rem;
+            padding: 0 10px;
+            font-weight: 500;
+        }
+
+        .app-summary .highlight {
+            color: #4285f4;
+            font-weight: 600;
+        }
+
         .app-description {
             text-align: center;
             color: #444;
             max-width: 800px;
-            margin: 8px auto 0 auto;
+            margin: 12px auto 0 auto;
             line-height: 1.5;
             font-size: 1rem;
             padding: 0 10px;

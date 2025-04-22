@@ -23,10 +23,13 @@ def header():
                     Professional Document to Markdown Conversion Tool
                 </div>
             </div>
+            <div class="app-summary">
+                <span class="highlight">Bridge the gap between documents and AI</span> — Transform any content into LLM-ready format
+            </div>
             <div class="app-description">
                 Convert various file formats to clean, well-formatted Markdown using Microsoft's
                 <a href="https://github.com/microsoft/markitdown/" target="_blank">MarkItDown</a> library.
-                Upload documents, PDFs, HTML files, and more for instant conversion.
+                Prepare documents for AI workflows, fine-tuning, and RAG systems with instant conversion of PDFs, Word documents, presentations, and more.
             </div>
         </div>
         """,
@@ -253,8 +256,10 @@ def example_section():
         ```
 
         This app is perfect for:
-        - Converting documentation to Markdown
-        - Preparing content for websites that use Markdown
-        - Extracting text from PDFs in a clean, structured format
+        - Converting documentation to LLM-ready Markdown
+        - Preparing training data for AI fine-tuning workflows
+        - Building RAG (Retrieval-Augmented Generation) systems
+        - Creating knowledge bases for AI assistants
+        - Extracting structured text from PDFs and other documents
         """)
 

@@ -21,21 +21,30 @@ def sidebar():
         # Display the information
         st.markdown(
             f"""
-            This application allows you to convert various file formats to Markdown.
+            This application transforms documents into clean, LLM-ready Markdown for AI workflows.
+
+            ### AI & LLM Integration
+            - **Fine-tuning Data Prep**: Prepare training data for LLMs
+            - **RAG Systems**: Create content for retrieval-augmented generation
+            - **Knowledge Bases**: Build AI-ready documentation
+            - **Prompt Engineering**: Extract structured content for prompts
 
             ### Supported Formats
             - Word Documents (.docx)
-            - HTML files (.html)
             - PDF documents (.pdf)
+            - PowerPoint (.pptx)
+            - HTML files (.html)
             - Text files (.txt)
             - Markdown files (.md)
             - Rich Text Format (.rtf)
+            - Images with OCR (.jpg, .png)
+            - Audio transcription (.mp3, .wav)
 
             ### How to Use
             1. Upload one or more files (max {MAX_FILE_SIZE_MB}MB per file)
-            2. Convert to Markdown
+            2. Convert to LLM-ready Markdown
             3. Preview the result
-            4. Download the Markdown file
+            4. Download and use with your AI tools
             """
         )
 
@@ -55,6 +64,7 @@ def sidebar():
 
         st.markdown("---")
         st.markdown("Built with Streamlit and [MarkItDown](https://github.com/microsoft/markitdown/)")
+        st.markdown("*Bridging the gap between documents and AI*")
 
         return settings
 
